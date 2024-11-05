@@ -21,9 +21,13 @@ import model.NVBanHang639;
  */
 public class HDThanhToanDAO639 extends DAO639{
 
-    public HDThanhToanDAO639() {
+    public HDThanhToanDAO639() {     
     }
-           
+    
+    public HDThanhToan639 taoHDThanhToan(float tongTien, NVBanHang639 nvbh, BanDat639 banDat) {
+        return new HDThanhToan639(tongTien, nvbh, banDat);
+    }
+    
     public boolean luuHDThanhToan(HDThanhToan639 hoaDon) {
         boolean res = false;
         String sql1 = "INSERT INTO tblHDThanhToan639(ngayTao, tongTien, tblBanDat639ID, tblNVBanHang639ID) VALUES(?,?,?,?)";

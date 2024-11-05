@@ -93,7 +93,7 @@
 
         BanDat639 banDat = (new BanDatDAO639()).getBanDat(Integer.parseInt(idBanDat));  
 
-        HDThanhToan639 hoaDon = new HDThanhToan639(monAnDatDAO.getTongTien() + comboDatDAO.getTongTien(), nvbh, banDat);
+        HDThanhToan639 hoaDon = (new HDThanhToanDAO639()).taoHDThanhToan(monAnDatDAO.getTongTien() + comboDatDAO.getTongTien(), nvbh, banDat);
         Date ngayTao = hoaDon.getNgayTao();
         
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("'Ngày' dd 'tháng' MM 'năm' yyyy");
