@@ -74,13 +74,13 @@
 </head>
 <body>
     <%
-        NguoiDung639 nd = (NguoiDung639) session.getAttribute("nvbanhang");
-        if(nd == null) {
+        NVBanHang639 nvbh = (NVBanHang639) session.getAttribute("nvbanhang");
+        if(nvbh == null) {
             response.sendRedirect(request.getContextPath() + "/view/dangnhap/gdDangNhap639.jsp?err=timeout");
         }
 
-        NguoiDung639 tmp = (new NguoiDungDAO639()).getNguoiDung(nd.getId());
-        NVBanHang639 nvbh = new NVBanHang639(tmp.getId(), tmp.getHoTen());
+//        NguoiDung639 tmp = (new NguoiDungDAO639()).getNguoiDung(nd.getId());
+//        NVBanHang639 nvbh = new NVBanHang639(nd.getId(), nd.getHoTen());
         String idBanDat = request.getParameter("id");
         
         List<MonAnDat639> listMonAnDat = null;

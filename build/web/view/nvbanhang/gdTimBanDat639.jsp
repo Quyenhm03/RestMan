@@ -1,3 +1,4 @@
+<%@page import="model.NVBanHang639"%>
 <%@page import="model.NguoiDung639"%>
 <%@page import="dao.BanDatDAO639"%>
 <%@page import="model.BanDat639"%>
@@ -78,7 +79,7 @@
 </head>
 <body>
     <%
-        NguoiDung639 nvbh = (NguoiDung639) session.getAttribute("nvbanhang");
+        NVBanHang639 nvbh = (NVBanHang639) session.getAttribute("nvbanhang");
         if(nvbh == null) {
             response.sendRedirect(request.getContextPath() + "/view/dangnhap/gdDangNhap639.jsp?err=timeout");
         }

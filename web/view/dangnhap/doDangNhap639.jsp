@@ -1,3 +1,4 @@
+<%@page import="model.NVBanHang639"%>
 <%@page import="dao.NguoiDungDAO639"%>
 <%@page import="model.NguoiDung639"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -15,7 +16,8 @@
         session.setAttribute("khachhang", nd);
         response.sendRedirect(request.getContextPath() + "/view/khachhang/gdChinhKH639.jsp");
     }else if(kq && (nd.getVaiTro() == 1)){
-        session.setAttribute("nvbanhang", nd);
+        NVBanHang639 nvbh = new NVBanHang639(nd.getId(), nd.getHoTen());
+        session.setAttribute("nvbanhang", nvbh);
         response.sendRedirect(request.getContextPath() + "/view/nvbanhang/gdChinhNVBanHang639.jsp");
     }else{
         response.sendRedirect(request.getContextPath() + "/view/dangnhap/gdDangNhap639.jsp?err=fail");

@@ -31,6 +31,7 @@ public class NguoiDungDAO639 extends DAO639{
             if(rs.next()) {
                 nd.setId(rs.getInt("ID"));
                 nd.setVaiTro(rs.getInt("vaiTro"));
+                nd.setHoTen(rs.getString("hoten"));
                 kq = true;
             }
         } catch (SQLException e) {
@@ -41,22 +42,22 @@ public class NguoiDungDAO639 extends DAO639{
         return  kq;
     }
     
-    public NguoiDung639 getNguoiDung(int idNguoiDung) {
-        NguoiDung639 nd = new NguoiDung639();
-        String sql = "SELECT * FROM tblNguoiDung639 WHERE ID = ?";
-        
-         try {
-            PreparedStatement ps = con.prepareStatement(sql);    
-            ps.setString(1, String.valueOf(idNguoiDung));
-            ResultSet rs = ps.executeQuery();
-            
-            if(rs.next()) {   
-                nd.setId(rs.getInt("ID"));
-                nd.setHoTen(rs.getString("hoten"));                     
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } 
-        return nd;
-    }
+//    public NguoiDung639 getNguoiDung(int idNguoiDung) {
+//        NguoiDung639 nd = new NguoiDung639();
+//        String sql = "SELECT * FROM tblNguoiDung639 WHERE ID = ?";
+//        
+//         try {
+//            PreparedStatement ps = con.prepareStatement(sql);    
+//            ps.setString(1, String.valueOf(idNguoiDung));
+//            ResultSet rs = ps.executeQuery();
+//            
+//            if(rs.next()) {   
+//                nd.setId(rs.getInt("ID"));
+//                nd.setHoTen(rs.getString("hoten"));                     
+//            }
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        } 
+//        return nd;
+//    }
 }

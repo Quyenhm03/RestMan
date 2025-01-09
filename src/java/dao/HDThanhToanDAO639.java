@@ -38,7 +38,8 @@ public class HDThanhToanDAO639 extends DAO639{
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
             ps.setString(1, sdf.format(hoaDon.getNgayTao()));
             ps.setString(2, String.valueOf(hoaDon.getTongTien())); 
-            ps.setString(3, String.valueOf(hoaDon.getBanDat().getId())); 
+            ps.setString(3, String.valueOf(hoaDon.getBanDat().
+                    getId())); 
             ps.setString(4, String.valueOf(hoaDon.getNvBanHang().getId()));                   
             ps.executeUpdate();
          
